@@ -1,25 +1,22 @@
-# opencv3.1-win10-vs2015
+##Opencv3.1-win10-vs2015(with opencv-contrib)
 Compiled files for opencv3.1(with opencv_contrib) in vs2015, win10 x64
 
-###### 1.Download 
-Click on the download zip button, and unzip .zip file.
+* Click on the download zip button, and unzip .zip file.
+* Copy the all x64/vc14/bin/*.dll files into C://Windows//System32//
+* Open vs2015 and create a new blank project.
+    *  Click on view->other windows->Property manager. And then click on your project/ Debug|x64 / Microsoft.Cpp.x64.user.
+        * include catergory:
+           
+            D:\opencv3.1\include\opencv2
 
-###### 2
-Copy the all x64/vc14/bin/*.dll files into C://Windows//System32//(将x64/vc64/bin/目录下的所有dll文件拷贝到C://Windows//System32//目录下)
-
-###### 3
-######## 3.1 Open vs2015 and create a new blank project.(创建一个新的c++的空项目)
-
-######## 3.2 Click on view->other windows->Property manager. And then click on your project/Debug|x64/Microsoft.Cpp.x64.user.(点击视图->其他窗口->属性管理器，然后在右上方出现的属性管理器中点击Debug|x64下的.user文件，开始编辑。)
-
-######## 3.3 In usual property->VC++ category, we need edit include catergory and lib catergory.
-include catergory -> D:\opencv3.1\include\opencv2
-                     D:\opencv3.1\include\opencv
-                     D:\opencv3.1\include                 (use your own file path)(包含目录添加三个目录include，include\opencv和include\opencv2)
-lib catergory ->  D:\opencv3.1\x64\vc14\lib               (use your own file path)(库目录添加一个目录x64\vc14\lib)
-
-######## 3.4 In linker -> input -> Additional dependencies add:(添加依赖项)
-"opencv_aruco310d.lib
+            D:\opencv3.1\include\opencv
+            
+            D:\opencv3.1\include(use your own file path)
+            
+    *  lib catergory ->  D:\opencv3.1\x64\vc14\lib
+    *  In linker -> input -> Additional dependencies add:
+```bash
+opencv_aruco310d.lib
 opencv_bgsegm310d.lib
 opencv_calib3d310d.lib
 opencv_ccalib310d.lib
@@ -102,8 +99,8 @@ opencv_xfeatures2d310.lib
 opencv_ximgproc310.lib
 opencv_xobjdetect310.lib
 opencv_xphoto310.lib
-opencv_aruco310.lib"
+opencv_aruco310.lib
+```
+* Test and debug
 
-###### 4
-Copy the context of "test.cpp" and debug.(测试)
-
+use "test.cpp" and img folder
